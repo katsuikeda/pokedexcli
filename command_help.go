@@ -5,7 +5,7 @@ import (
 	"slices"
 )
 
-func commandHelp() error {
+func commandHelp(cfg *config) error {
 	commands := getCommands()
 	commandNames := make([]string, len(commands))
 

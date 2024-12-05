@@ -1,5 +1,11 @@
 package main
 
+import "github.com/katsuikeda/pokedexcli/internal/pokeapi"
+
 func main() {
-	startRepl()
+	cfg := config{
+		pokeapiClient: pokeapi.NewClient(),
+	}
+
+	startRepl(&cfg)
 }
