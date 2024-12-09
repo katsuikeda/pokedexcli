@@ -5,7 +5,7 @@ import (
 	"slices"
 )
 
-func commandHelp(cfg *config) error {
+func commandHelp(cfg *config, args ...string) error {
 	commands := getCommands()
 	commandNames := make([]string, len(commands))
 
@@ -21,7 +21,7 @@ func commandHelp(cfg *config) error {
 	fmt.Println("Usage:")
 	fmt.Println()
 	for _, name := range commandNames {
-		fmt.Printf("%s: %s\n", name, commands[name].description)
+		fmt.Printf("%s: %s\n", commands[name].name, commands[name].description)
 	}
 	fmt.Println()
 	return nil
